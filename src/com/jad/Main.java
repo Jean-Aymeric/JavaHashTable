@@ -9,5 +9,6 @@ public class Main {
                 return 0;
             }
         };
+        myHashTable.add(new Person("JAD", 47));
     }
 }

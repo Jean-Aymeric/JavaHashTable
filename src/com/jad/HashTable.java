@@ -8,14 +8,17 @@ public abstract class HashTable<Data extends IHasKey> {
 
     protected HashTable(int size) {
         this.size = size;
-        this.persons = (Vector<Data>[]) new Object[size];
+        this.persons = new Vector[size];
+        for (int i = 0; i < size; i ++) {
+            this.persons[i] = new Vector<>();
+        }
     }
 
     public int getSize() {
         return size;
     }
 
-    public void add(int index, Data data) {
+    public void add(Data data) {
         this.persons[hashCode(data.getKey())].add(data);
     }
 
